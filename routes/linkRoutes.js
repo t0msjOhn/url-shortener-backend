@@ -9,7 +9,6 @@ import {
 const router = express.Router();
 
 router.post("/shorten", createShortLink);
-router.get("/:slug", redirectLink);
 router.get("/stats/:slug", getLinkStats);
 router.delete("/links/:slug", deleteLink);
 
