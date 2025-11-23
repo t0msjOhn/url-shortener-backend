@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/t0msjOhn/url-shortener-backend#readme",
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
     "axios": "^1.13.2",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
