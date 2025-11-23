@@ -1,16 +1,24 @@
 const { Pool } = require('pg');
 require('dotenv').config();
+const { neon } = require("@neondatabase/serverless");
 
 // Create a connection pool
+// const pool = new Pool({
+//   host: process.env.PG_HOST,
+//   port: process.env.PG_PORT,
+//   user: process.env.PG_USER,
+//   password: process.env.PG_PASSWORD,
+//   database: process.env.PG_DATABASE,
+//   max: 10, 
+//   idleTimeoutMillis: 30000, 
+//   connectionTimeoutMillis: 2000, 
+// });
+
 const pool = new Pool({
-  host: process.env.PG_HOST,
-  port: process.env.PG_PORT,
-  user: process.env.PG_USER,
-  password: process.env.PG_PASSWORD,
-  database: process.env.PG_DATABASE,
-  max: 10, 
-  idleTimeoutMillis: 30000, 
-  connectionTimeoutMillis: 2000, 
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    require: true,
+  },
 });
 
 // Function to test the database connection
