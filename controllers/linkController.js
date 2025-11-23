@@ -3,15 +3,12 @@ import * as linkService from "../services/linkService.js";
 // Create short URL
 export const createShortLink = async (req, res) => {
     console.log("Request Body:", req.body);
-  const { url, customSlug, password, expiresAt } = req.body;
+  const { url} = req.body;
   try {
     const shortUrl = await linkService.createLink(
-      url,
-      customSlug,
-      password,
-      expiresAt
+      url
     );
-    res.json({ shortUrl });
+    res.json(shortUrl );
   } catch (error) {
     console.error("Error in createShortLink:", error);
     res.status(error.status || 500).json({ error: error.message });
