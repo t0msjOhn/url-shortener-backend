@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import { pool } from "../config/db.js";
 import bcrypt from "bcrypt";
+import dotenv from "dotenv";
 
 const ALPHABET ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
