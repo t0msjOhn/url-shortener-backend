@@ -20,7 +20,7 @@ export const createLink = async (url) => {
     throw { status: 500, message: "Internal server error" };
   }
 
-  const baseUrl = process.env.BASE_URL || "http://localhost:3000";
+  const baseUrl = process.env.BASE_URL || "https://shortly-bgtu.onrender.com";
   return {"shortUrl":`${baseUrl}/${slug}`,"code":slug};
 };
 
